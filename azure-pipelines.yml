@@ -21,8 +21,6 @@ steps:
 - bash:  
     ls -lhR /home/vsts/work/1/s/
   displayName: 'test001'
-- script: 
-    cd /home/vsts/work/1/s/my-app
-    mvn package
-    java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App 
+- bash: 
+    cd /home/vsts/work/1/s/my-app & mvn package & java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App 
   displayName: 'test002'
