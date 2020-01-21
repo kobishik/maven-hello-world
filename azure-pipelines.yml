@@ -19,5 +19,5 @@ steps:
   displayName: 'Run a multi-line script'
 
 - bash:  
-    ls -lhr /home/vsts/work/1/s/.git/
+    ls -lhR /home/vsts/work/1/s/
   displayName: 'test001'
