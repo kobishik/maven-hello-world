@@ -19,8 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
 
 - bash:  
+    echo ===== STARTING BASH HERE =====
     ls -lhR /home/vsts/work/1/s/
   displayName: 'test001'
 - bash: 
-    cd /home/vsts/work/1/s/my-app & mvn package & java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App 
+    cd /home/vsts/work/1/s/my-app
+    mvn package
+    java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App 
   displayName: 'test002'
