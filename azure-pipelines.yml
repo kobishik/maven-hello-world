@@ -20,7 +20,13 @@ steps:
   inputs:
     contents: '/home/vsts/work/1/s/my-app/target/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
-- task: PublishBuildArtifacts@1
+
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    pathToPublish: $(Build.ArtifactStagingDirectory)
+#    artifactName: HelloWorld
+
+- task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: $(Build.ArtifactStagingDirectory)
-    artifactName: HelloWorld
+    targetPath: '$(Pipeline.Workspace)' 
+    artifactName: 'drop'
