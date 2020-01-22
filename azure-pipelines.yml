@@ -28,5 +28,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)' 
-    artifactName: 'drop'
+    #targetPath: '$(Pipeline.Workspace)' 
+    targetPath: '/home/vsts/work/1/s/my-app/target/my-app-1.0-SNAPSHOT.jar'
+    artifactName: 'HelloWorld'
