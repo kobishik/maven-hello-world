@@ -10,20 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- bash:  
-    echo ===== STARTING BASH HERE =====;
-    ls -lhR /home/vsts/work/1/s/;
-  displayName: 'test001'
-- bash: 
+- script: 
     cd /home/vsts/work/1/s/my-app;
     mvn package;
     java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App;
-  displayName: 'test002'
+  displayName: 'build'
