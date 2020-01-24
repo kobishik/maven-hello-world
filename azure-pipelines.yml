@@ -14,18 +14,17 @@ variables:
 
 steps:
 - script: 
-    echo ====================;
-    pwd;
-    echo ====================;
-    cd /home/vsts/work/1/s/my-app;
+    echo ===== Pipeline.Workspace: $(Pipeline.Workspace) =====
+    cd my-app;
     mvn package;
     java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App;
-  displayName: 'build'
+  displayName: 'Build project my-app'
 
 - task: CopyFiles@2
   inputs:
-    contents: '/home/vsts/work/1/s/my-app/target/**'
+    contents: 'target/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy artifact to staging directory'
 
 #- task: PublishBuildArtifacts@1
 #  inputs:
@@ -35,7 +34,7 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     #targetPath: '$(Pipeline.Workspace)' 
-    targetPath: '/home/vsts/work/1/s/my-app/target/my-app-1.0-SNAPSHOT.jar'
+    targetPath: 'my-app/target/my-app-1.0-SNAPSHOT.jar'
     artifactName: 'HelloWorld'
 
 #- task: Docker@2
