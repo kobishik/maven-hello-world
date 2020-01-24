@@ -37,9 +37,10 @@ steps:
     targetPath: 'my-app/target/my-app-1.0-SNAPSHOT.jar'
     artifactName: 'HelloWorld'
 
-#- task: Docker@2
-#  displayName: Build an image
-#  inputs:
-#    repository: $(imageName)
-#    command: build
-#    Dockerfile: my-app/Dockerfile
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    containerRegistry: helloWorldReg
+    Dockerfile: my-app/Dockerfile
