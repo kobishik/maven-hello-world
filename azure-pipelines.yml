@@ -42,5 +42,5 @@ steps:
   inputs:
     repository: $(imageName)
     command: build
-    containerRegistry: helloWorldReg
+#    containerRegistry: helloWorldReg
     Dockerfile: my-app/Dockerfile
