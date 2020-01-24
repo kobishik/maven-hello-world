@@ -15,6 +15,7 @@ variables:
 steps:
 - script: 
     echo ===== Pipeline.Workspace $(Pipeline.Workspace) =====;
+    echo ===== dockerRegistryServiceConnection $(dockerRegistryServiceConnection) =====;
     cd my-app;
     mvn package;
     java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App;
@@ -42,5 +43,5 @@ steps:
   inputs:
     repository: $(imageName)
     command: buildAndPush
-    containerRegistry: $(dockerRegistryServiceConnection)
+#    containerRegistry: $(dockerRegistryServiceConnection)
     Dockerfile: my-app/Dockerfile
