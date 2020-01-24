@@ -43,6 +43,6 @@ steps:
   inputs:
     repository: $(imageName)
     command: buildAndPush
-#    containerRegistry: helloWorldReg
-    containerRegistry: $(dockerRegistryServiceConnection)
+    containerRegistry: helloWorldReg
+#    containerRegistry: $(dockerRegistryServiceConnection)
     Dockerfile: my-app/Dockerfile
