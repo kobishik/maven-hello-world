@@ -14,6 +14,9 @@ variables:
 
 steps:
 - script: 
+    echo ====================;
+    pwd;
+    echo ====================;
     cd /home/vsts/work/1/s/my-app;
     mvn package;
     java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App;
@@ -35,9 +38,9 @@ steps:
     targetPath: '/home/vsts/work/1/s/my-app/target/my-app-1.0-SNAPSHOT.jar'
     artifactName: 'HelloWorld'
 
-- task: Docker@2
-  displayName: Build an image
-  inputs:
-    repository: $(imageName)
-    command: build
-    Dockerfile: /home/vsts/work/1/s/my-app/Dockerfile
+#- task: Docker@2
+#  displayName: Build an image
+#  inputs:
+#    repository: $(imageName)
+#    command: build
+#    Dockerfile: /home/vsts/work/1/s/my-app/Dockerfile
