@@ -20,11 +20,11 @@ steps:
     java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App;
   displayName: 'Build project my-app'
 
-- task: CopyFiles@2
-  inputs:
-    contents: 'target/**'
-    targetFolder: $(Build.ArtifactStagingDirectory)
-  displayName: 'Copy artifact to staging directory'
+#- task: CopyFiles@2
+#  inputs:
+#    contents: 'target/**'
+#    targetFolder: $(Build.ArtifactStagingDirectory)
+#  displayName: 'Copy artifact to staging directory'
 
 #- task: PublishBuildArtifacts@1
 #  inputs:
